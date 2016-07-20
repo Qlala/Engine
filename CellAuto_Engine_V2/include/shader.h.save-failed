@@ -1,0 +1,52 @@
+
+#pragma once
+#include "Header.h"
+extern GLuint LoadShader(unsigned int Type,char* FileName, GLuint Program);
+
+class ShaderHandler{
+    GLuint ProgramPipeline;
+    std::vector<GLuint> ProgramList;
+    std::vector<std::vector<GLuint>> ShaderAttachedList;
+    std::vector<std::vector<int>> ShaderAttachedType;
+    //ThreadMessage
+    HANDLE ShaderDemandSent;
+    HANDLE ShaderDemandAnswered;
+    int ShaderDemand;
+    string StringArgument;
+    GLuint GLuintArgument;
+    int IntIndex;
+    int* IntArrayArgument;
+    GLuint* GLuintArrayArgument;
+    volatile void * PointerArgument;
+
+
+    //bool d'etat
+    bool ShaderReady=false;
+    bool Activated=true;
+        public:
+        bool IsShaderReady(){return ShaderReady;}
+        //Code = 2
+        ~ShaderHandler();
+        ShaderHandler();
+        void ShaderHandlerDestructor();
+        void ActivatePipeline();
+        int CreateNewProgram();
+        //Code = 4
+        bool DeleteProgram(int n);
+        bool InternDeleteProgram(int n);
+        void CreatePipeline();
+        int CheckDemand();
+        //Code = 3
+        int InternAddShader(string filename,GLuint ShaderType,int ProgramIndex=-1);
+        int AddShader(string filename,GLuint ShaderType,int ProgramIndex=-1);
+        //N adrress dans le tableau ,PrgAdress list de numero d'adress,PrgType : GL_***_BIT assemblage d'enum en tableau pour chaque programe
+        //Code = 5
+        void SetActiveInternProgram(int* PrgAdress,GLuint* PrgType,int n);
+        void InternSetActiveInternProgram(int* PrgAdress,GLuint* PrgType,int n);
+        //Code = 6
+        bool InternUniformSet(GLuint Type, GLuint Count,volatile void *Pointer,GLuint StageAdress,GLuint Adress=-1,string UniformName="");
+        bool SetUniform(GLuint Type, GLuint Count,volatile void* Pointer,GLuint StageAdress,GLuint Adress=-1,string UniformName="");
+    protected:
+    private:
+
+};
