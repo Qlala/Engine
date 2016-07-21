@@ -233,7 +233,7 @@ template<GLuint N,typename S,typename ...Args>
 extern void testConvert();
 template<typename S>
 extern std::vector<S> ConvertAll(std::vector<IniProp> props,std::vector<string> order,std::vector<IniType> structformat);
-
+//Iniprop est le tableau avec les prop Order=> est la suite des ne noms des vars qui décrit la maniere dont elle sont organisés dans la structure et structfroamt est l'equivalence en type de ces variable
 class IniDecoder{
     //Thread Control
     HANDLE DecodeEnded;

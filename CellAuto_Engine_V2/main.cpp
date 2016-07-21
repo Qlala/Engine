@@ -17,7 +17,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     wglMakeCurrent(GlobaHDC,GLobalHGLRC);
     HINSTANCE GlobalInstanceHandle=hInstance;
     int CMDShowNumber=nCmdShow;
-    Window MainWindow=Window(0,0,0,true,16);
+    Window MainWindow=Window(0,0,0,true,0);
     ConsoleEcho("Ca continue");
     SetCurrentDirectory("Shader");
 /*
