@@ -11,3 +11,4 @@ extern bool LogFileOpened;
 extern bool ConsoleInit;
 extern const char* GenStrWithUniqueCode(const char* Format,bool increment=true);
 extern void DefineGLDebugCallback();
+

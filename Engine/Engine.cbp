@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Engine" />
+		<Option pch_mode="2" />
+		<Option compiler="gnu_gcc_710_rev0_win32-sjlj" />
+		<Build>
+			<Target title="default">
+				<Option output="Engine" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_710_rev0_win32-sjlj" />
+				<Compiler>
+					<Add option="-march=corei7-avx" />
+					<Add option="-std=c++11" />
+				</Compiler>
+			</Target>
+			<Target title="release">
+				<Option output="Engine" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_710_rev0_win32-sjlj" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-m64" />
+					<Add option="-DGLEW_STATIC" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+				</Linker>
+			</Target>
+			<Target title="debug">
+				<Option output="Engine" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_710_rev0_win32-sjlj" />
+				<Option use_console_runner="0" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-march=corei7-avx" />
+			<Add option="-O3" />
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add option="-m64" />
+			<Add option="-DGLEW_STATIC" />
+			<Add directory="header" />
+			<Add directory="header/lib" />
+		</Compiler>
+		<Linker>
+			<Add option="-m64" />
+			<Add library="gdi32" />
+			<Add library="libwinspool.a" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="kernel32" />
+		</Linker>
+		<Unit filename="header/Asset.h" />
+		<Unit filename="header/FrameTexture.h" />
+		<Unit filename="header/GlTool.h" />
+		<Unit filename="header/GlobalHeader.h" />
+		<Unit filename="header/LibHeader.h">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="header/console.h" />
+		<Unit filename="header/engine_phase.h" />
+		<Unit filename="lib/glew.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Unit filename="src/GlTool.cpp" />
+		<Unit filename="src/console.cpp" />
+		<Unit filename="src/engine_phase.cpp">
+			<Option link="0" />
+		</Unit>
+		<Unit filename="sync_compa.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
